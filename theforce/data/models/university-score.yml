@@ -1,0 +1,114 @@
+attributes:
+  省份:
+    name: student_province_id
+    correction:
+      - int2
+    validateion:
+      - required
+  年份:
+    name: year
+    correction:
+      - year
+      - int2
+    validation:
+      - required
+      - max:2020
+  科类:
+    name: subject_name
+    correction:
+      - subject_name
+    validation:
+      - required
+      - enum:文科|理科
+  批次:
+    name: batching_name
+    validation:
+      - required
+  是否专业分数:
+    name: is_major
+    default: 1
+  院校:
+    name: university
+  院校代码:
+    name: university_code
+  院校名称:
+    name: university_name
+    validation:
+      - required
+  计划数:
+    name: plan_number
+    correction:
+      - int2
+    validation:
+      - required
+      - min:0
+  计划类型:
+    name: plan_type
+  投档数:
+    name: file_number
+    correction:
+      - int2
+    validation:
+      - min:0
+  计划数投档数差:
+    name: plan_diff
+    transient: true
+    correction:
+      - int2
+  投档比例:
+    name: file_ratio
+    transient: true
+    correction:
+      - int2
+    validation:
+      - min:0
+  投档分:
+    name: file_score
+    correction:
+      - int2
+    validation:
+      - max:750
+  投档分语文:
+    name: file_score_chinese
+    transient: true
+    correction:
+      - int2
+    validation:
+      - max:150
+  投档分数学:
+    name: file_score_math
+    transient: true
+    correction:
+      - int2
+    validation:
+      - max:150
+  投档分英语:
+    name: file_score_english
+    transient: true
+    correction:
+      - int2
+    validation:
+      - max:150
+  最高分:
+    name: score_high
+    transient: true
+    correction:
+      - int2
+    validation:
+      - max:750
+  最低分:
+    name: score_low
+    transient: true
+    correction:
+      - int2
+    validation:
+      - max:750
+  平均分:
+    name: score_avg
+    transient: true
+    correction:
+      - int2
+    validation:
+      - max:750
+table: dev_sdb.sdb_enrollment_file_score_16
+collection: file_score_major_16

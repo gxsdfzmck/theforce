@@ -1,0 +1,22 @@
+"Sheet1":
+  - region: ['A2', 'G1137']
+    model: 'score-rank'
+    fields:
+      - 省名称
+      - 年份
+      - 科类
+      - 分数
+      - 末位排名
+      - 人数
+      - 首位排名
+    extend:
+      省份: 16
+    evals:
+      - field: 低分
+        eval: 
+          - type: eval
+            param: obj[u'分数']
+      - field: 高分
+        eval:
+          - type: eval
+            param: obj[u'分数']

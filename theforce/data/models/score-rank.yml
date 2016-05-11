@@ -1,0 +1,64 @@
+attributes:
+  省份:
+    name: province_id
+    correction:
+      - int2
+    validation:
+      - required
+  省名称:
+    name: province_name
+    validation:
+      - required
+  年份:
+    name: year
+    validation:
+      - required
+  科类:
+    name: subject_name
+    correction:
+      - subject_name
+    validation:
+      - required
+  分数:
+    name: score
+    transient: true
+    correction:
+      - int2
+    validation:
+      - max:750
+      - min:0
+  低分:
+    name: score_min
+    validation:
+      - required
+      - min:0
+      - max:750
+  高分:
+    name: score_max
+    validation:
+      - required
+      - min:0
+      - max:750
+  人数:
+    name: count
+    correction:
+      - int2
+    validation:
+      - required
+      - min:0
+  首位排名:
+    name: ranking
+    correction:
+      - int2
+    validation:
+      - required
+      - min:0
+  末位排名:
+    name: last_ranking
+    correction:
+      - int2
+    validation:
+      - required
+      - min:0
+table: "'dev_sdb.sdb_leveled_file_ranking2'"
+collection: level_file_ranking

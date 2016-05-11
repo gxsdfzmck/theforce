@@ -1,0 +1,122 @@
+"2015本一理":
+  - region: ['A7', 'H352']
+    model: 'university-score'
+    fields:
+      - 院校代码
+      - 院校名称
+      - 计划数
+      - 投档人数
+      - 投档分
+      - 投档分语文
+      - 投档分数学
+      - 投档分英语
+    extend:
+      年份: 2015
+      科类: '理科'
+      批次: '本科一批'
+      省份: 16
+"2015本一文":
+  - region: ['A7', 'H256']
+    model: 'university-score'
+    fields:
+      - 院校代码
+      - 院校名称
+      - 计划数
+      - 投档人数
+      - 投档分
+      - 投档分语文
+      - 投档分数学
+      - 投档分英语
+    extend:
+      年份: 2015
+      科类: '文科'
+      批次: '本科一批'
+      省份: 16
+"2015本二理":
+  - region: ['A7', 'H593']
+    model: 'university-score'
+    fields:
+      - 院校代码
+      - 院校名称
+      - 计划数
+      - 投档人数
+      - 投档分
+      - 投档分语文
+      - 投档分数学
+      - 投档分英语
+    extend:
+      年份: 2015
+      科类: '理科'
+      批次: '本科二批'
+      省份: 16
+"2015本二文":
+  - region: ['A7', 'H500']
+    model: 'university-score'
+    fields:
+      - 院校代码
+      - 院校名称
+      - 计划数
+      - 投档人数
+      - 投档分
+      - 投档分语文
+      - 投档分数学
+      - 投档分英语
+    extend:
+      年份: 2015
+      科类: '文科'
+      批次: '本科二批'
+      省份: 16
+"2015本三":
+  - region: ['A5', 'H732']
+    model: 'university-score'
+    fields:
+      - _院校
+      - 科类
+      - 计划类型
+      - 计划数
+      - 投档数
+      - _分数线
+      - 投档比例
+      - 投档分
+    extend:
+      年份: 2015
+      批次: '本科三批'
+      省份: 16
+    evals:
+      - field: 院校代码
+        eval: 
+          - type: eval
+            param: re.compile('^\((.*?)\)(.*)$').match(obj[u'_院校']).group(1)
+      - field: 院校名称
+        eval:
+          - type: eval
+            param: re.compile('^\((.*?)\)(.*)$').match(obj[u'_院校']).group(2)
+          - type: eval
+            param: obj[u'_院校']
+"2015高职高专":
+  - region: ['A5', 'H2092']
+    model: 'university-score'
+    fields:
+      - _院校
+      - 科类
+      - 计划类型
+      - 计划数
+      - 投档数
+      - _分数线
+      - 投档比例
+      - 投档分
+    extend:
+      年份: 2015
+      批次: '专科'
+      省份: 16
+    evals:
+      - field: 院校代码
+        eval: 
+          - type: eval
+            param: re.compile('^\((.*?)\)(.*)$').match(obj[u'_院校']).group(1)
+      - field: 院校名称
+        eval:
+          - type: eval
+            param: re.compile('^\((.*?)\)(.*)$').match(obj[u'_院校']).group(2)
+          - type: eval
+            param: obj[u'_院校']

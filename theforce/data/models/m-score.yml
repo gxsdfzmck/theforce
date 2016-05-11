@@ -1,0 +1,124 @@
+attributes:
+  省份:
+    name: province_id
+    correction:
+      - int2
+    validateion:
+      - required
+  年份:
+    name: year
+    correction:
+      - trim_dot_like
+      - year
+      - int2
+    validation:
+      - required
+      - max:2020
+  批次:
+    name: batching_name
+    validation:
+      - required
+  文理科:
+    name: subject_name
+    correction:
+      - subject_name
+    validation:
+      - required
+      - enum:文科|理科
+  院校代码:
+    name: university_code
+  院校名称:
+    name: university_name
+    validation:
+      - required
+  专业代码:
+    name: major_code
+  专业名称:
+    name: major_name
+    validation:
+      - required  
+  计划类型:
+    name: plan_type
+  计划限制:
+    name: plan_limit
+  计划数:
+    name: plan_number
+    correction:
+      - trim_dot_like
+      - int2
+    validation:
+      - required
+      - min:0
+  投档轮:
+    name: file_round
+  投档数:
+    name: file_number
+    correction:
+      - trim_dot_like
+      - int2
+    validation:
+      - min:0
+  计划数投档数差:
+    name: plan_diff
+    transient: true
+    correction:
+      - int2
+  投档分:
+    name: file_score
+    correction:
+      - trim_dot_like
+      - int2
+    validation:
+      - max:750
+  投档最高分:
+    name: file_score_max
+    correction:
+      - trim_dot_like
+      - int2
+    validation:
+      - max:750
+  投档平均分:
+    name: file_score_mean
+    correction:
+      - ltrim_dot_like
+      - rtrim_dot_like
+      - float2
+    validation:
+      - max:750
+  投档比例:
+    name: file_ratio
+    correction:
+      - int2
+    validation:
+      - min:0
+  录取数:
+    name: adm_number
+    correction:
+      - trim_dot_like
+      - int2
+    validation:
+      - min:0
+  录取分:
+    name: adm_score
+    correction:
+      - trim_dot_like
+      - int2
+    validation:
+      - max:750
+  录取最高分:
+    name: adm_score_max
+    correction:
+      - trim_dot_like
+      - int2
+    validation:
+      - max:750
+  录取平均分:
+    name: adm_score_mean
+    correction:
+      - ltrim_dot_like
+      - rtrim_dot_like
+      - float2
+    validation:
+      - max:750
+table: "'rd2016.m_score_{0}'.format(obj[u'省份'])"
+collection: m_file_score

@@ -1,0 +1,189 @@
+"2014高职高专":
+  - region: ['A5', 'H2239']
+    model: 'university-score'
+    fields:
+      - _院校
+      - 科类
+      - 计划类型
+      - 计划数
+      - 投档数
+      - _分数线
+      - 投档比例
+      - 投档分
+    extend:
+      年份: 2014
+      省份: 16
+      批次: '专科'
+    evals:
+      - field: 院校代码
+        eval: 
+          - type: eval
+            param: re.compile('^\((.*?)\)(.*)$').match(obj[u'_院校']).group(1)
+      - field: 院校名称
+        eval:
+          - type: eval
+            param: re.compile('^\((.*?)\)(.*)$').match(obj[u'_院校']).group(2)
+          - type: eval
+            param: obj[u'_院校']
+"2013高职高专扶贫专项":
+  - region: ['A5', 'H9']
+    model: 'university-score'
+    fields:
+      - _院校
+      - 科类
+      - 计划类型
+      - 计划数
+      - 投档数
+      - _分数线
+      - 投档比例
+      - 投档分
+    extend:
+      年份: 2013
+      省份: 16
+      批次: '专科(扶贫专项)'
+    evals:
+      - field: 院校代码
+        eval: 
+          - type: eval
+            param: re.compile('^\((.*?)\)(.*)$').match(obj[u'_院校']).group(1)
+      - field: 院校名称
+        eval:
+          - type: eval
+            param: re.compile('^\((.*?)\)(.*)$').match(obj[u'_院校']).group(2)
+          - type: eval
+            param: obj[u'_院校']
+"2013高职高专": # 这个Excel有数据占多行的情况
+  - region: ['A5', 'H1643']
+    model: 'university-score'
+    fields:
+      - _院校
+      - 科类
+      - 计划数
+      - 投档数
+      - 计划数投档数差
+      - _分数线
+      - 投档比例
+      - 投档分
+    extend:
+      年份: 2013
+      省份: 16
+      批次: '专科'
+    evals:
+      - field: 院校代码
+        eval: 
+          - type: eval
+            param: re.compile('^\((.*?)\)(.*)$').match(obj[u'_院校']).group(1)
+      - field: 院校名称
+        eval:
+          - type: eval
+            param: re.compile('^\((.*?)\)(.*)$').match(obj[u'_院校']).group(2)
+          - type: eval
+            param: obj[u'_院校']
+"2012高职高专二批":
+  - region: ['A5', 'H1872']
+    model: 'university-score'
+    fields:
+      - _院校
+      - 科类
+      - 计划类型
+      - 计划数
+      - 投档数
+      - _分数线
+      - 投档比例
+      - 投档分
+    extend:
+      年份: 2012
+      省份: 16
+      批次: '专科二批'
+    evals:
+      - field: 院校代码
+        eval: 
+          - type: eval
+            param: re.compile('^\((.*?)\)(.*)$').match(obj[u'_院校']).group(1)
+      - field: 院校名称
+        eval:
+          - type: eval
+            param: re.compile('^\((.*?)\)(.*)$').match(obj[u'_院校']).group(2)
+          - type: eval
+            param: obj[u'_院校']
+"2012高职高专一批":
+  - region: ['A5', 'H624']
+    model: 'university-score'
+    fields:
+      - _院校
+      - 科类
+      - 计划类型
+      - 计划数
+      - 投档数
+      - _分数线
+      - 投档比例
+      - 投档分
+    extend:
+      年份: 2012
+      省份: 16
+      批次: '专科一批'
+    evals:
+      - field: 院校代码
+        eval: 
+          - type: eval
+            param: re.compile('^\((.*?)\)(.*)$').match(obj[u'_院校']).group(1)
+      - field: 院校名称
+        eval:
+          - type: eval
+            param: re.compile('^\((.*?)\)(.*)$').match(obj[u'_院校']).group(2)
+          - type: eval
+            param: obj[u'_院校']
+"2011高职高专一批":
+  - region: ['A5', 'H592']
+    model: 'university-score'
+    fields:
+      - _院校
+      - 科类
+      - 计划类型
+      - 计划数
+      - 投档数
+      - _分数线
+      - 投档比例
+      - 投档分
+    extend:
+      年份: 2011
+      省份: 16
+      批次: '专科一批'
+    evals:
+      - field: 院校代码
+        eval: 
+          - type: eval
+            param: re.compile('^\((.*?)\)(.*)$').match(obj[u'_院校']).group(1)
+      - field: 院校名称
+        eval:
+          - type: eval
+            param: re.compile('^\((.*?)\)(.*)$').match(obj[u'_院校']).group(2)
+          - type: eval
+            param: obj[u'_院校']
+"2011高职高专二批":
+  - region: ['A5', 'H1930']
+    model: 'university-score'
+    fields:
+      - _院校
+      - 科类
+      - 计划类型
+      - 计划数
+      - 投档数
+      - _分数线
+      - 投档比例
+      - 投档分
+    extend:
+      年份: 2011
+      省份: 16
+      批次: '专科二批'
+    evals:
+      - field: 院校代码
+        eval: 
+          - type: eval
+            param: re.compile('^\((.*?)\)(.*)$').match(obj[u'_院校']).group(1)
+      - field: 院校名称
+        eval:
+          - type: eval
+            param: re.compile('^\((.*?)\)(.*)$').match(obj[u'_院校']).group(2)
+          - type: eval
+            param: obj[u'_院校']
